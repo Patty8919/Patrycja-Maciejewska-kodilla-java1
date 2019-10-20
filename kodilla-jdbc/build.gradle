@@ -1,0 +1,21 @@
+plugins {
+    //id 'org.springframework.boot'
+    //id 'io.spring.dependency-management'
+    id 'java'
+}
+
+group = 'kodilla-jdbc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile ('junit:junit:4.12')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
+}
