@@ -8,7 +8,7 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesWithNamesPart",
         query = "SELECT * FROM companies" +" "+
-                "WHERE MID(COMPANY_NAME, 1, 3) = :GIVENSIGNS",
+                "WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :GIVENSIGNS",
         resultClass = Company.class
 )
 @NamedQueries({
@@ -24,19 +24,9 @@ public class Company {
     private String name;
     private List<Employee> employees = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
-
     public Company() {
 
     }
-
     public Company(String name) {
         this.name = name;
     }
@@ -62,4 +52,15 @@ public class Company {
     public void setName(String name) {
         this.name = name;
     }
+
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+
 }
