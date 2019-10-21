@@ -39,7 +39,7 @@ public class CompanyFacadeTestSuite {
         companyDao.save(dataMaesters );
         companyDao.save(greyMatter );
 
-        List<Company> companies = searchFacade.processSearchCompany("ster");
+        List<Company> companies = searchFacade.processSearchCompany("ers");
 
         //Then
         Assert.assertEquals(1,companies.size());

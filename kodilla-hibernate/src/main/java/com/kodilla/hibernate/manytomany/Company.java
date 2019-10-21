@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompanyName",
+        name = "Company.retrieveCompaniesWithNamesPart",
         query = "SELECT * FROM companies" +" "+
-                "WHERE MID(COMPANY_NAME, 1, 3) = :THREECHARACTERS",
+                "WHERE MID(COMPANY_NAME, 1, 3) = :GIVENSIGNS",
         resultClass = Company.class
 )
 @NamedQueries({
         @NamedQuery(
-                name = "Company.retrieveCompaniesWithNamesPart",
-                query = "FROM Company WHERE name LIKE :LETTERS"
+                name = "Company.retrieveCompanyName",
+                query = "FROM Company WHERE name LIKE :NAME"
         )
 })
 @Entity

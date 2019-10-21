@@ -12,7 +12,7 @@ import java.util.List;
         ),
         @NamedQuery(
                 name = "Employee.retrieveFromPartOfLastName",
-                query = "FROM Employee WHERE lastname LIKE :LETTERS"
+                query = "FROM Employee WHERE lastname LIKE :LASTNAME"
         )
 })
 
