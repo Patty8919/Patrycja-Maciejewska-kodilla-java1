@@ -70,8 +70,8 @@ public class CompanyFacadeTestSuite {
         List<Employee> employees = searchFacade.processSearchEmployee("sky");
 
         //Then
-        //Assert.assertEquals(1,employees.size());
-        //Assert.assertEquals("Kovalsky", employees.get(0).getLastname());
+        Assert.assertEquals(1,employees.size());
+        Assert.assertEquals("Kovalsky", employees.get(0).getLastname());
 
         //CleanUp
         try {
