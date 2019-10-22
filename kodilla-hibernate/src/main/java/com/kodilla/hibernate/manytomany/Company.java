@@ -7,13 +7,13 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompanyName",
-        query = "FROM Company WHERE name LIKE :NAME ",
+        query = "FROM Company WHERE name LIKE :COMPANY_NAME ",
         resultClass = Company.class
 )
 @NamedQueries({
         @NamedQuery(
                 name = "Company.retrieveCompaniesWithNamesPart",
-                query = "FROM Company WHERE name LIKE '%' || :NAME ||'%' "
+                query = "FROM Company WHERE name LIKE '%' || :COMPANY_NAME ||'%' "
         )
 })
 @Entity
