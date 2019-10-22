@@ -24,7 +24,7 @@ public class SearchFacade {
     private final static Logger LOGGER = LoggerFactory.getLogger(SearchFacade.class);
 
     public List<Company> processSearchCompany(String name) {
-        List<Company> companies = companyDao.retrieveCompanyName(name).orElse(new ArrayList<Company>());
+        List<Company> companies = companyDao.retrieveCompaniesWithNamesPart(name).orElse(new ArrayList<Company>());
         if (companies.size() !=0) {
             for (Company company : companies) {
                 LOGGER.info("Found company: " + company.getName() +" "+ name);

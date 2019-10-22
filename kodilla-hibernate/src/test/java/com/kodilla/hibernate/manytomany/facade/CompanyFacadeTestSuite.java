@@ -65,7 +65,7 @@ public class CompanyFacadeTestSuite {
         employeeDao.save(stephanieClarckson);
         employeeDao.save(lindaKovalsky);
 
-        List<Employee> employees = searchFacade.processSearchEmployee("ski");
+        List<Employee> employees = searchFacade.processSearchEmployee("sky");
 
         //Then
         Assert.assertEquals(1, employees.size());

@@ -6,14 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompaniesWithNamesPart",
-        query = "SELECT * FROM companies" +
-                "WHERE SUBSTRING(COMPANY_NAME, 1, 3) LIKE :NAME",
+        name = "Company.retrieveCompanyName",
+        query = "FROM Company WHERE name LIKE :NAME ",
         resultClass = Company.class
 )
 @NamedQueries({
         @NamedQuery(
-                name = "Company.retrieveCompanyName",
+                name = "Company.retrieveCompaniesWithNamesPart",
                 query = "FROM Company WHERE name LIKE '%' || :NAME ||'%' "
         )
 })
