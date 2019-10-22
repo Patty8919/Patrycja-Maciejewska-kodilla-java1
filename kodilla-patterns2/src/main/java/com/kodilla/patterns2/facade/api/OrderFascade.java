@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class OrderFascade {
     @Autowired
     private ShopService shopService;
-    private static final Logger LOGGER = LoggerFactory.getLogger(OrderFascade.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(OrderFascade.class);
 
     public void processOrder(final OrderDto order, final Long userId)
             throws OrderProcessingException {
@@ -55,6 +55,7 @@ public class OrderFascade {
         } finally {
             if (wasError) {
                 LOGGER.info("Cancelling order " + orderId);
+                shopService.cancelOrder(orderId);
 
             }
         }
