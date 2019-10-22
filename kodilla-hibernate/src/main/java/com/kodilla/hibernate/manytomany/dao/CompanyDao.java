@@ -14,9 +14,9 @@ import java.util.Optional;
 @Repository
 public interface CompanyDao extends CrudRepository <Company, Integer> {
     @Query(nativeQuery = true)
-    List<Company> retrieveCompaniesWithNamesPart(@Param("GIVENSIGNS") String threeCharacters);
+    List<Company> retrieveCompaniesWithNamesPart(@Param("NAME") String name);
 
     @Query
-    Optional<List<Company>>retrieveCompanyName (@Param("NAME") String namePart);
+    Optional<List<Company>>retrieveCompanyName (@Param("NAME") String name);
 
 }

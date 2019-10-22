@@ -27,7 +27,7 @@ public class SearchFacade {
         List<Company> companies = companyDao.retrieveCompanyName(name).orElse(new ArrayList<Company>());
         if (companies.size() !=0) {
             for (Company company : companies) {
-                LOGGER.info("Found company: " + company.getName() + name);
+                LOGGER.info("Found company: " + company.getName() +" "+ name);
             }
         } else {
             LOGGER.error("No company with: " + name);
@@ -39,7 +39,7 @@ public class SearchFacade {
         List<Employee> employees = employeeDao.retrieveFromPartOfLastName(lastname).orElse(new ArrayList<Employee>());
         if (employees.size() != 0) {
             for (Employee employee : employees) {
-                LOGGER.info("Found employee: " + employee.getLastname() + lastname);
+                LOGGER.info("Found employee: " + employee.getLastname() +" "+ lastname);
             }
         } else {
             LOGGER.error("No employee found with: " + lastname);
